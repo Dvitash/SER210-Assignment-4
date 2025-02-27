@@ -36,17 +36,19 @@ fun DetailsScreen(
 
     Column(modifier = Modifier.padding(12.dp)) {
         when (houseResult) {
-            is NetworkResponse.Loading -> {
+            NetworkResponse.Loading -> {
                 Text(text = "Loading house details...", style = MaterialTheme.typography.bodyLarge)
             }
-            is NetworkResponse.Error -> {
+
+            NetworkResponse.Error -> {
                 Text(
                     text = "Error: ${(houseResult as NetworkResponse.Error).message}",
                     color = MaterialTheme.colorScheme.error,
                     style = MaterialTheme.typography.bodyLarge
                 )
             }
-            is NetworkResponse.Success -> {
+
+            NetworkResponse.Success -> {
                 val houses = (houseResult as NetworkResponse.Success<List<House>>).data
                 val selectedHouse = houses.find { it.id == houseId }
 
@@ -59,6 +61,7 @@ fun DetailsScreen(
                     Text(text = "House not found.", style = MaterialTheme.typography.bodyLarge)
                 }
             }
+
             else -> {
                 Text(text = "Unexpected error.", style = MaterialTheme.typography.bodyLarge)
             }
