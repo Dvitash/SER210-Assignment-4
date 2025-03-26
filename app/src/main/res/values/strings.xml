@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HeroApp</string>
+    <string name="toast_string">This is an app that uses a RestAPI to find local houses </string>
 </resources>

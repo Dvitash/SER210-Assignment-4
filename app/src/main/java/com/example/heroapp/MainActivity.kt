@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.heroapp.navagation.MovieNavigation
+import com.example.heroapp.navigation.MovieNavigation
 import com.example.heroapp.ui.theme.HeroAppTheme
 
 class MainActivity : ComponentActivity() {

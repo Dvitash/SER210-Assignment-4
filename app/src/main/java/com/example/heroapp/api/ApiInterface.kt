@@ -12,11 +12,13 @@ data class ZillowResponse(
     @SerializedName("props") val houses: List<House>
 )
 
+//Our API can be found at: https://rapidapi.com/apimaker/api/zillow-com1/playground/apiendpoint_4af058da-4283-4bfc-98ed-760f1cfd5f86
 interface ApiInterface {
     @Headers(
-        "X-RapidAPI-Key: 4a233b656emsh02d17db07f14be8p1bb218jsn998f5fb93257",
+        "X-RapidAPI-Key: //PUT YOUR KEY HERE",
         "X-RapidAPI-Host: zillow-com1.p.rapidapi.com"
     )
+    //THIS IS THE SEARCH FUNCTION WE USE
     @GET("propertyExtendedSearch?location=Hamden%2C%20Connecticut&status_type=ForSale&home_type=Houses")
     suspend fun getHouses(): Response<ZillowResponse>
 
